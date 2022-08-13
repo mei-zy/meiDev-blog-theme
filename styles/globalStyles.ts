@@ -3,32 +3,33 @@ import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
-    
+
+    @font-face {
+      font-family: 'S-CoreDream-9Black';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'S-CoreDream-5Medium';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'S-CoreDream-3Light';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
 
     body{
-      color:${({ theme }) => theme.color.contrast};
-      background:${({ theme }) => theme.color.base};
-      font-family: 'Nanum Gothic', sans-serif;
+      min-width:320px;
+      min-height:100vh;
+      font-family:'S-CoreDream-3Light';
     }
-
-
-    body::selection, a::selection{
-      background-color:${({ theme }) => theme.color.point};
-      color:${({ theme }) => theme.color.base};
-    }
-
-    main{
-      width:90%;
-      margin:0 auto;
-    }
-
-
-    .fontGradient{
-      background: ${({ theme }) => theme.color.gradient};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
 `;
 
 export default GlobalStyles;
