@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -5,12 +7,19 @@ interface IInfoObj {
   name: string;
   startDate: string;
   endDate: string;
+  techStack?: Array<string>;
+  link?: Array<IProjectLinkType>;
   contents: Array<string>;
 }
 
 interface IIntroduceObj {
   subTitle: string;
   content: string;
+}
+
+interface IProjectLinkType {
+  title: string;
+  href: string;
 }
 
 interface IAboutInfoFormat {
@@ -50,6 +59,42 @@ const StyledAboutInfoFormat = styled.section`
     font-size: 15px;
   }
 
+  .link,
+  .techStack {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin: 3px 8px 3px 0px;
+    }
+  }
+
+  .link {
+    margin-bottom: 8px;
+
+    a {
+      margin-right: 10px;
+      color: #524c42;
+      opacity: 0.7;
+    }
+
+    .linkTitle {
+      margin-left: 8px;
+    }
+  }
+
+  .techStack {
+    margin-bottom: 15px;
+
+    li {
+      font-size: 13px;
+      background-color: #524c42;
+      color: white;
+      padding: 2px 10px;
+      border-radius: 30px;
+    }
+  }
+
   .list,
   .content {
     color: #7b7979;
@@ -79,12 +124,34 @@ const AboutInfoFormat = ({
       {isInfoGetDate ? (
         <>
           {(infoObj as Array<IInfoObj>).map(
-            ({ name, startDate, endDate, contents }) => (
+            ({ name, startDate, endDate, contents, techStack, link }) => (
               <section key={name} className="contentSection">
                 <h3>{name}</h3>
+                <ul className="link">
+                  {link?.map(({ title, href }) => (
+                    <li key={title}>
+                      <Link href={href}>
+                        <a>
+                          <Image
+                            src="/images/link.svg"
+                            alt={title}
+                            width="18px"
+                            height="18px"
+                          />
+                          <span className="linkTitle">{title}</span>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
                 <div className="date">
                   {startDate} ~ {endDate}
                 </div>
+                <ul className="techStack">
+                  {techStack?.map((tech) => (
+                    <li key={`${name}${tech}`}>{tech}</li>
+                  ))}
+                </ul>
                 <ul className="list">
                   {contents.map((content, index) => (
                     <li key={`${name}${index}`}>{content}</li>
