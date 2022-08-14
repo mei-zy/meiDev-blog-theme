@@ -29,7 +29,7 @@ const StyleMain = styled.div<{ circleSize: number }>`
     top: 349px;
     left: 17px;
     line-height: 1.5;
-    font-size: 32px;
+    font-size: 28px;
     color: white;
 
     a {
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       <StyleMain circleSize={mainCircleSize}>
         <div className="logo">
           <Image
-            src="/images/whitelogo.png"
+            src="/images/whitelogo.svg"
             alt="로고"
             width="250px"
             height="164px"
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
         <ul className="nav">
           {blogNav.map((menu) => (
             <li key={menu}>
-              <Link href="/">
+              <Link href={`/${menu.toLowerCase()}`}>
                 <a>{menu}</a>
               </Link>
             </li>
