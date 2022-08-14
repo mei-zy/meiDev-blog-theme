@@ -1,5 +1,6 @@
+const { withContentlayer } = require("next-contentlayer");
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config) => {
@@ -11,6 +12,6 @@ const nextConfig = {
     });
     return config;
   },
-};
+});
 
 module.exports = nextConfig;
