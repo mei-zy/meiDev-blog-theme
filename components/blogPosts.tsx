@@ -9,6 +9,7 @@ interface IPosts {
   date: string;
   description: string;
   tags?: string;
+  link: string;
   thumbnail?: string;
 }
 
@@ -77,10 +78,17 @@ const StyledImageBackground = styled.div<{ image: string }>`
   background-size: cover;
 `;
 
-const BlogPosts = ({ title, date, description, tags, thumbnail }: IPosts) => {
+const BlogPosts = ({
+  title,
+  date,
+  description,
+  tags,
+  thumbnail,
+  link,
+}: IPosts) => {
   return (
     <StyledBlogPosts>
-      <Link href="/">
+      <Link href={`/dev/${link}`}>
         <a className="itemWrapper">
           <div className="blogInfo">
             <div className="dateAndtagsWrapper">

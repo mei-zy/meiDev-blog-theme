@@ -1,10 +1,10 @@
-import Header from "../../components/header";
 import { allPosts, Post } from "contentlayer/generated";
 import { InferGetStaticPropsType } from "next";
 import BlogPosts from "components/blogPosts";
 import styled from "styled-components";
 import LeftSideTags from "components/leftSideTags";
-import { useEffect, useState } from "react";
+import Header from "components/header";
+import { useState } from "react";
 
 const StyledBlogWrapper = styled.ul`
   width: 80%;
@@ -32,19 +32,21 @@ const Dev = ({
     <>
       <Header />
       <LeftSideTags tags={tagsList} onChangeTag={setCurrentTag} />
+
       <StyledBlogWrapper>
         {posts
           .filter((post) =>
             currentTag !== "All" ? post.tags === currentTag : post
           )
-          .map(({ title, date, description, tags, thumbnail, _id }) => (
+          .map((post) => (
             <BlogPosts
-              title={title}
-              date={date}
-              description={description}
-              tags={tags}
-              thumbnail={thumbnail}
-              key={_id}
+              title={post.title}
+              date={post.date}
+              description={post.description}
+              tags={post.tags}
+              thumbnail={post.thumbnail}
+              key={post._id}
+              link={post._raw.flattenedPath}
             />
           ))}
       </StyledBlogWrapper>
