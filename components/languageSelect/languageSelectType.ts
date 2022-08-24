@@ -1,12 +1,10 @@
 import { Dispatch } from "react";
 
-export interface LanguageSelectI {
-  currentLan: string;
+export interface LanguageSelectI extends LanguageI {
   onSelectLan: Dispatch<string>;
 }
 
-export interface LanguageSelectViewI {
+export interface LanguageSelectViewI extends LanguageI {
   languageList: Array<string>;
-  currentLan: string;
   onClickLanguage: (e: React.SyntheticEvent) => void;
 }

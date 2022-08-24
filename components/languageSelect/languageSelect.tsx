@@ -1,10 +1,8 @@
-import React from "react";
+import { languageList } from "blogSetting";
 import { LanguageSelectI } from "./languageSelectType";
 import LanguageSelectView from "./languageSelectView";
 
 const LanguageSelect = ({ currentLan, onSelectLan }: LanguageSelectI) => {
-  const languageList = ["국문", "EN", "中文", "日文"];
-
   const onClickLanguage = (e: React.SyntheticEvent) => {
     if (!(e.target instanceof HTMLLIElement)) return;
     if (!e.target.dataset.id) return;
