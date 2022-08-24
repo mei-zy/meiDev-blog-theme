@@ -10,7 +10,10 @@ declare module "styled-components" {
   export interface DefaultTheme {
     color: {
       base: string;
+      base100: string;
       contrast: string;
+      contrast400: string;
+      contrast700: string;
       point: string;
     };
     media: MediaQueryType;

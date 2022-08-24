@@ -3,39 +3,33 @@ import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
-    @font-face {
-      font-family: 'S-CoreDream-8Heavy';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color:${({ theme }) => theme.color.base};
+        color:${({ theme }) => theme.color.contrast};
+        font-weight:400;
+        font-size:14px;
     }
-
-    @font-face {
-      font-family: 'S-CoreDream-6Bold';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'S-CoreDream-5Medium';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
+    
+    main{
+        width:95%;
+        margin:0 auto;
     }
 
-    @font-face {
-      font-family: 'S-CoreDream-3Light';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
+    .point{
+        color:${({ theme }) => theme.color.point};
     }
 
-    body{
-      min-width:320px;
-      min-height:100vh;
-      font-family:'S-CoreDream-3Light';
+    .weight-bold{
+        font-weight:700;
     }
+
+    .weight-black{
+        font-weight:900;
+    }
+
 `;
 
 export default GlobalStyles;
