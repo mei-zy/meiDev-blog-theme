@@ -1,9 +1,8 @@
-import { navList } from "blogSetting";
+import Nav from "@components/nav/nav";
 import Link from "next/link";
 import { StyledHeader } from "./headerStyled";
-import { HeaderViewI } from "./headerType";
 
-const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderViewI) => (
+const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderNavI) => (
   <StyledHeader>
     <h1 className="logo">
       <Link href="/">
@@ -13,44 +12,7 @@ const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderViewI) => (
         </a>
       </Link>
     </h1>
-    <nav className="mobile">
-      {mobileIsOpenModal ? (
-        <button className="close-btn btn" onClick={onClickModal}>
-          X
-        </button>
-      ) : (
-        <button className="hamburger btn" onClick={onClickModal}>
-          <div />
-          <div />
-          <div />
-        </button>
-      )}
-      {mobileIsOpenModal ? (
-        <section className="modal">
-          <ul className="nav-list" onClick={onClickModal}>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            {navList.map((nav) => (
-              <li key={nav}>
-                <Link href={`/${nav}`}>
-                  <a>{nav}</a>
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/search">
-                <a>Search</a>
-              </Link>
-            </li>
-          </ul>
-        </section>
-      ) : (
-        <></>
-      )}
-    </nav>
+    <Nav mobileIsOpenModal={mobileIsOpenModal} onClickModal={onClickModal} />
   </StyledHeader>
 );
 
