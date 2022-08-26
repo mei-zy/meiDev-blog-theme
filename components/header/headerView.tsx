@@ -5,25 +5,34 @@ import { HeaderViewI } from "./headerType";
 
 const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderViewI) => (
   <StyledHeader>
-    <h1>
+    <h1 className="logo">
       <Link href="/">
         <a className="header_logo weight-black">
-          <span>MEI.</span>
-          <span className="point">DEV</span>
+          <span className={`${mobileIsOpenModal ? "base" : ""}`}>MEI.</span>
+          <span className={`${mobileIsOpenModal ? "base" : "point"}`}>DEV</span>
         </a>
       </Link>
     </h1>
     <nav className="mobile">
-      <div className="hamburger" onClick={onClickModal}>
-        <div />
-        <div />
-        <div />
-      </div>
       {mobileIsOpenModal ? (
-        <></>
+        <button className="close-btn btn" onClick={onClickModal}>
+          X
+        </button>
       ) : (
+        <button className="hamburger btn" onClick={onClickModal}>
+          <div />
+          <div />
+          <div />
+        </button>
+      )}
+      {mobileIsOpenModal ? (
         <section className="modal">
-          <ul>
+          <ul className="nav-list">
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
             {navList.map((nav) => (
               <li key={nav}>
                 <Link href={`/${nav}`}>
@@ -31,8 +40,15 @@ const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderViewI) => (
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/search">
+                <a>Search</a>
+              </Link>
+            </li>
           </ul>
         </section>
+      ) : (
+        <></>
       )}
     </nav>
   </StyledHeader>

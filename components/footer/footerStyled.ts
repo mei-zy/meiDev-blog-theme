@@ -11,4 +11,5 @@ export const StyledFooter = styled.footer`
   align-items: center;
   position: absolute;
   bottom: 0;
+  z-index: 100;
 `;

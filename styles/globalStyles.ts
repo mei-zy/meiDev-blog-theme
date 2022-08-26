@@ -11,11 +11,13 @@ const GlobalStyles = createGlobalStyle`
         color:${({ theme }) => theme.color.contrast};
         font-weight:400;
         font-size:14px;
+        word-spacing:-1px;
     }
     
     main{
-        width:95%;
-        margin:0 auto;
+        width:87%;
+        margin: 20px auto 0 auto;
+        padding-bottom:60px;
     }
 
     .point{
