@@ -27,7 +27,7 @@ const HeaderView = ({ mobileIsOpenModal, onClickModal }: HeaderViewI) => (
       )}
       {mobileIsOpenModal ? (
         <section className="modal">
-          <ul className="nav-list">
+          <ul className="nav-list" onClick={onClickModal}>
             <li>
               <Link href="/">
                 <a>Home</a>
