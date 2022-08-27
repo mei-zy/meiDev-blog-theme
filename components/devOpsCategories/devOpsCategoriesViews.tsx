@@ -1,3 +1,4 @@
+import { DevOpsCategoriesViewI } from "types";
 import { StyledDevOpsCategories } from "./devOpsCategoriesStyled";
 
 const DevOpsCategoriesView = ({
@@ -6,7 +7,7 @@ const DevOpsCategoriesView = ({
   categories,
   onClickOpenCategories,
   onChangeCategories,
-}) => (
+}: DevOpsCategoriesViewI) => (
   <StyledDevOpsCategories>
     <div className="categoryWrapper">
       <h2 onClick={onClickOpenCategories}>

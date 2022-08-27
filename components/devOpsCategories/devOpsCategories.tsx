@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { DevOpsCategoriesPropsI } from "types";
 import DevOpsCategoriesView from "./devOpsCategoriesViews";
 
 const DevOpsCategories = ({
   categories,
   currentCategory,
   setCurrentCategory,
-}) => {
+}: DevOpsCategoriesPropsI) => {
   const [isOpenCategories, setIsOpenCategories] = useState(false);
 
   const onClickOpenCategories = () => {

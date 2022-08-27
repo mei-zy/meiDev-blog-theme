@@ -42,6 +42,7 @@ export const StyledDevOpsCategories = styled.section`
       border-radius: 20px;
       padding: 1px 4px;
       margin-right: 8px;
+      margin-bottom: 8px;
     }
 
     .current,
