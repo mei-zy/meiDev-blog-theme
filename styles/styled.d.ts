@@ -11,10 +11,14 @@ declare module "styled-components" {
     color: {
       base: string;
       base100: string;
+      base200: string;
+      base300: string;
       contrast: string;
       contrast400: string;
       contrast700: string;
       point: string;
+      point100: string;
+      lightGray: string;
     };
     media: MediaQueryType;
   }
