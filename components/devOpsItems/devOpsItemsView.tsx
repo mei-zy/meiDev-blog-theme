@@ -17,7 +17,7 @@ const DevOpsItemsView = ({ posts }) => (
                 <li key={`${post.title}${tag}`}>{tag}</li>
               ))}
             </ul>
-            <div className="content">{post.body.html}</div>
+            <div className="content">{post.body.raw}</div>
           </a>
         </Link>
       </li>
