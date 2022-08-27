@@ -11,26 +11,33 @@ export const StyledDevOpsItems = styled.ul`
     color: ${({ theme }) => theme.color.contrast};
   }
 
+  a:hover {
+    transform: scale(1.05);
+  }
+
   .date {
     color: ${({ theme }) => theme.color.point};
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .title {
-    margin: 5px 0;
+    margin: 7px 0;
+    line-height: 1.3;
     font-size: 25px;
   }
 
   .tagList {
     display: flex;
+    flex-wrap: wrap;
 
     li {
       background-color: ${({ theme }) => theme.color.point100};
       color: ${({ theme }) => theme.color.base};
       font-weight: 500;
-      font-size: 10px;
-      padding: 4px 8px;
-      margin-right: 10px;
+      font-size: 12px;
+      padding: 5px 8px;
+      margin-right: 5px;
+      margin-bottom: 8px;
       border: 0;
       border-radius: 10px;
     }
@@ -44,6 +51,5 @@ export const StyledDevOpsItems = styled.ul`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-top: 10px;
   }
 `;
