@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDevOpsItems = styled.ul`
-  li {
+  .item {
     padding: 20px 5px;
     border-bottom: 1px solid ${({ theme }) => theme.color.base200};
   }
@@ -24,23 +24,6 @@ export const StyledDevOpsItems = styled.ul`
     margin: 7px 0;
     line-height: 1.3;
     font-size: 25px;
-  }
-
-  .tagList {
-    display: flex;
-    flex-wrap: wrap;
-
-    li {
-      background-color: ${({ theme }) => theme.color.point100};
-      color: ${({ theme }) => theme.color.base};
-      font-weight: 500;
-      font-size: 12px;
-      padding: 5px 8px;
-      margin-right: 5px;
-      margin-bottom: 8px;
-      border: 0;
-      border-radius: 10px;
-    }
   }
 
   .content {
