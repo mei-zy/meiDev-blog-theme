@@ -10,9 +10,10 @@ export const StyledHeader = styled.section`
   }
 
   .title {
-    font-size: 28px;
+    width: 90%;
+    font-size: 25px;
     line-height: 1.2;
-    margin: 14px 0px;
+    margin: 14px auto;
   }
 
   ul {

@@ -23,4 +23,22 @@ export const StyledHeader = styled.header`
       color: ${({ theme }) => theme.color.contrast};
     }
   }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 30px 0px;
+
+    .logo {
+      a {
+        font-size: 24px;
+
+        span:first-of-type {
+          color: ${({ theme }) => theme.color.contrast};
+        }
+
+        span:last-of-type {
+          color: ${({ theme }) => theme.color.point};
+        }
+      }
+    }
+  }
 `;

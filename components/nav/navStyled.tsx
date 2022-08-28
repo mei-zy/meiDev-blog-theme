@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledMobileNav = styled.nav`
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
+  }
+
   .btn {
     position: relative;
     z-index: 100;
@@ -53,6 +57,29 @@ export const StyledMobileNav = styled.nav`
           font-size: 63px;
           font-weight: 800;
         }
+      }
+    }
+  }
+`;
+
+export const StyledLaptopNav = styled.nav`
+  display: none;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    display: block;
+
+    .navList {
+      display: flex;
+
+      li {
+        margin-right: 20px;
+      }
+
+      a {
+        color: ${({ theme }) => theme.color.contrast};
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 20px;
       }
     }
   }

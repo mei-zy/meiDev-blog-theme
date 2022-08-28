@@ -12,4 +12,9 @@ export const StyledFooter = styled.footer`
   position: fixed;
   bottom: 0;
   z-index: 100;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    height: 70px;
+    font-size: 15px;
+  }
 `;

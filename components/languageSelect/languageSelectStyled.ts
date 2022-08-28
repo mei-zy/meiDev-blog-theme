@@ -7,6 +7,7 @@ export const StyledLanguageStyled = styled.ul`
   border: 1px solid ${({ theme }) => theme.color.contrast400};
   border-radius: 30px;
   color: ${({ theme }) => theme.color.contrast700};
+  cursor: pointer;
 
   li {
     margin-right: 7px;
@@ -15,5 +16,21 @@ export const StyledLanguageStyled = styled.ul`
 
   li:last-of-type {
     margin-right: 0px;
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 5px;
+    position: fixed;
+    left: 7%;
+
+    li {
+      margin: 0px 0px 8px 0px;
+    }
+
+    li:last-of-type {
+      margin-bottom: 0px;
+    }
   }
 `;
