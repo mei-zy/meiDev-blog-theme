@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { ThemePropsI } from "types";
 import HeaderView from "./headerView";
 
-const Header = () => {
+const Header = ({ theme, setTheme }: ThemePropsI) => {
   const [mobileIsOpenModal, setMobileIsOpenModal] = useState(false);
 
   const onClickModal = () => {
@@ -9,7 +10,9 @@ const Header = () => {
   };
 
   const props = {
+    theme,
     mobileIsOpenModal,
+    setTheme,
     onClickModal,
   };
 

@@ -40,6 +40,10 @@ export const StyledMobileNav = styled.nav`
       padding-top: 40%;
       padding-right: 25px;
 
+      button {
+        margin-top: 10px;
+      }
+
       li {
         margin-bottom: -7px;
 
