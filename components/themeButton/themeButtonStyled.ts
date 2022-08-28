@@ -17,7 +17,7 @@ export const StyledThemeButton = styled.button<{ currentTheme: string }>`
     height: 15px;
     background-image: url(assets/svg/${({ currentTheme }) =>
       currentTheme === "Light" ? "moon" : "sun"}.svg);
-
     background-size: cover;
+    background-repeat: no-repeat;
   }
 `;
