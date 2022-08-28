@@ -1,9 +1,15 @@
 import { DefaultTheme } from "styled-components";
 
-const media = {
-  mobile: "(max-width:770px)",
-  tablet: "(max-width:1100px)",
-  desktop: "(min-width:1200px)",
+const deviceSizes = {
+  mobile: "375px",
+  tablet: "668px",
+  laptop: "1024px",
+};
+
+const device = {
+  mobile: `screen and (min-width: ${deviceSizes.mobile})`,
+  tablet: `screen and (min-width: ${deviceSizes.tablet})`,
+  laptop: `screen and (min-width: ${deviceSizes.laptop})`,
 };
 
 export const lightTheme: DefaultTheme = {
@@ -19,7 +25,7 @@ export const lightTheme: DefaultTheme = {
     point100: "#E277A8",
     lightGray: "#DADADA",
   },
-  media,
+  device,
 };
 
 export const darkTheme: DefaultTheme = {
@@ -35,5 +41,5 @@ export const darkTheme: DefaultTheme = {
     point100: "#8CC87F",
     lightGray: "#DADADA",
   },
-  media,
+  device,
 };

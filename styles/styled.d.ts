@@ -3,7 +3,7 @@ import "styled-components";
 interface MediaQueryType {
   mobile: string;
   tablet: string;
-  desktop: string;
+  laptop: string;
 }
 
 declare module "styled-components" {
@@ -20,6 +20,6 @@ declare module "styled-components" {
       point100: string;
       lightGray: string;
     };
-    media: MediaQueryType;
+    device: MediaQueryType;
   }
 }

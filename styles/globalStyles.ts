@@ -12,6 +12,16 @@ const GlobalStyles = createGlobalStyle`
         font-weight:400;
         font-size:14px;
         word-spacing:-1px;
+
+        @media ${({ theme }) => theme.device.tablet} {
+            font-size:15px;
+        }
+
+        @media ${({ theme }) => theme.device.laptop} {
+            font-size:16px;
+        }
+
+  
     }
     
     main{
