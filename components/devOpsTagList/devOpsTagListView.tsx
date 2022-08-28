@@ -1,3 +1,4 @@
+import { DevOpsTagListI } from "types";
 import { StyledTagList } from "./devOpsTagListStyled";
 
 const DevOpsTagListView = ({ tagList, postTitle }: DevOpsTagListI) => (

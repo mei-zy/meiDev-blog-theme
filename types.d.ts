@@ -1,4 +1,6 @@
+import { Post } from "contentlayer/generated";
 import { Dispatch } from "react";
+
 interface LanguageI {
   currentLan: string;
 }
@@ -17,7 +19,7 @@ interface DevOpsTagListI extends TagsI {
 }
 
 interface CategoriesI {
-  [key]: number;
+  [key: string]: number;
 }
 
 interface DevOpsCategoriesI {
@@ -33,4 +35,8 @@ interface DevOpsCategoriesViewI extends DevOpsCategoriesI {
   isOpenCategories: boolean;
   onClickOpenCategories: (e: SyntheticEvent<Element, Event>) => void;
   onChangeCategories: (e: SyntheticEvent<Element, Event>) => void;
+}
+
+interface PostI {
+  post: Post;
 }
