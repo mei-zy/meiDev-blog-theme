@@ -1,11 +1,16 @@
 import { Post } from "contentlayer/generated";
 import { Dispatch } from "react";
 
+interface ThemePropsI {
+  theme: string;
+  setTheme: Dispatch<string>;
+}
+
 interface LanguageI {
   currentLan: string;
 }
 
-interface HeaderNavI {
+interface HeaderNavI extends ThemePropsI {
   onClickModal: () => void;
   mobileIsOpenModal: boolean;
 }
